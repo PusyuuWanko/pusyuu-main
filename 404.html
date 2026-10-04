@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="copyright" content="© 2020-2025 by ISAMI ABE/"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://pusyuuwanko.com/pusyuusystem/images/favicon.ico"/>
+    <title>プシューサービス - 存在しないサービス：404番エラー</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        color: #FFF;
+        padding: 0;
+        margin: 0;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: #000;
+        background-image: url("https://pusyuuwanko.com/profile/assets/images/2.JPG");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: -1;
+      }
+      error-message {
+        width: 80%;
+        height: 60vh;
+        overflow: auto;
+        display: block;
+        background-color: rgba(255,255,0, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transform: skew(7deg);
+        border-radius: 5px;
+        box-shadow: 1px 4px 4px #fa0;
+        padding: 20px;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        height: 75px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px 0;
+        background-color: #007700;
+        z-index: 10;
+      }
+      nav ul li {
+        list-style: none;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #00ff00;
+      }
+      header > h1 {
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        margin-top: 85px;
+        position: relative;
+        padding: 10px;
+        min-height: 100vh;
+      }
+      main > #effect {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+      }
+      footer {
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+        padding: 10px;
+      }
+      .err_box_warp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        min-height: 100vh;
+        padding: 0px 30px 0px;
+      }
+      star {
+        position: absolute;
+        display: block;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.8;
+        transform: translate(-50%, -50%);
+        animation: fly 2s linear forwards;
+      }
+
+      @keyframes fly {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translate(var(--tx), var(--ty)) scale(2);
+            opacity: 0;
+        }
+      }
+      #effect {
+        position: fixed;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="effect"></div>
+    <header>
+      <h1>P-Error</h1>
+      <nav>
+        <ul>
+          <li><a href="https://pusyuuwanko.com/pusyuusystem/pages/contact" target="_blank">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="err_box_warp">
+        <error-message>
+          <h2>存在しないサービス<span style="margin: 0 10px 0; color: #fff000;">エラーコード：404</span></h2>
+          <p>これは存在しないサービスへのアクセスがあった場合に表示されます。</p>
+          <a href="http://pusyuuwanko.com"><button>プシューゲートウェイ</button></a>
+          <h3>これは何ですか？</h3>
+          <p>この画面は、存在しない、つまりページのない場所にアクセスした場合に表示されます。なぜページがないのかですが、恐らくそのページが存在していたが後に別のアドレスに移動または削除された（古いブックマークの情報を保存していませんか？）か、そもそも存在しないページにアクセスした（アドレスをお間違いではありませんか？）かのどちらかの可能性が高いです。</p>
+        </error-message>
+      </div>
+    </main>
+    <footer>
+      <small>© 2020-2025 Created By ISAMI ABE/</small>
+    </footer>
+    <script>
+      // 「このパスに来たら、この移転先へ」という対応表
+      var redirectMap = [
+        { match: "/cgi-bin/public/bbs_of_php",   to: "https://pips.pusyuuwanko.com" }
+      ];
+
+      var path = window.location.pathname;
+      var hit = null;
+      for (var i = 0; i < redirectMap.length; i++) {
+        // 前方一致でゆるく判定（完全一致にしたいなら === に変える）
+        if (path.indexOf(redirectMap[i].match) === 0) {
+          hit = redirectMap[i];
+          break;
+        }
+      }
+
+      if (hit) {
+        window.location.href = hit.to;   // 対象パスだけ転送
+      }
+      // hit が無ければ何もしない → 404がそのまま表示される
+
+      var effectEle = document.getElementById("effect");
+      function createStar() {
+        var star = document.createElement("star");
+
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight /2;
+        star.style.top = centerY + "px";
+        star.style.left = centerX + "px";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 1000;
+        const tx = Math.cos(angle) * distance + "px";
+        const ty = Math.sin(angle) * distance + "px";
+        star.style.setProperty("--tx", tx);
+        star.style.setProperty("--ty", ty);
+        star.style.width = (Math.random() * 1 + 8) + "px";
+        star.style.height = (Math.random() * 2 + 8) + "px";
+        effectEle.appendChild(star);
+        setTimeout(function() {
+          star.remove();
+        }, 20000);
+      }
+      setInterval(function () { createStar(); }, 100);
+    </script>
+  </body>
+</html>

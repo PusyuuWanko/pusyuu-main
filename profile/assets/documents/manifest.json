@@ -1,0 +1,32 @@
+{
+  "theme_color": "#00FF00",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "../images/icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "../images/icon512_maskable.png",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null,
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "ja",
+  "name": "二十歳にはなりたくないー、そんなプシューの気持ちのサイト",
+  "short_name": "二十歳になりたくない記念サイト",
+  "start_url": "/profile/?hatatinaritakunai",  
+  "scope": "/profile/?hatatinaritakunai",                
+  "prefer_related_applications": true,  
+  "related_applications": [],   
+  "serviceworker": {
+    "src": "./assets/scripts/script.js"           
+  }
+}

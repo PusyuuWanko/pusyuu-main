@@ -1,0 +1,82 @@
+{
+  "links": [
+    {
+      "title": "プシューゲートウェイ",
+      "description": "プシューサービスのホームです。",
+      "url": "https://pusyuuwanko.com",
+      "image": ""
+    },
+    {
+      "title": "PusyuuIPS",
+      "description": "PIPSはPusyuuImpressionsPostService.の略で名前通り感想を書いたり見たりして楽しむサービスで、ミニブログとしてでも、掲示板としてでも、そしてチャットとしても利用可能です！、操作感は某SNSプラットフォームのような使い心地です。",
+      "url": "https://pips.pusyuuwanko.com",
+      "image": "https://pips.pusyuuwanko.com/assets/images/pips_logo.png"
+    },
+    {
+      "title": "プシューメモとテキストエディター",
+      "description": "プシューメモとテキストエディターでは以前プシューマルチアプリに含まれていたアプリの一つを、改良し単体のメモアプリとして使えるようにしたものです。バックアップ機能が充実してかつ、WEB（ブラウザ）上で実行可能なのがこのアプリのメリットです。",
+      "url": "https://p-memo.pusyuuwanko.com",
+      "image": "https://p-memo.pusyuuwanko.com/assets/images/memo-baricon.png"
+    },
+    {
+      "title": "ツールボックス",
+      "description": "このアプリは便利な機能が沢山詰まったツールボックスで、日所生活、仕事、勉強で説明書も読まず楽にかつ簡単に使える手軽ツールがあり、それらがアプリアイコンとして表示されててスマホでもパソコンでも同じ環境で実行可能です、更になんと、このツールボックスは壁紙の変更機能はもちろん、ブラウザで実行可能で、バックグラウンド実行も可能なのです！！",
+      "url": "https://toolbox.pusyuuwanko.com",
+      "image": "https://toolbox.pusyuuwanko.com/assets/images/toolbox-baricon.png"
+    },
+    {
+      "title": "グアピーガエル",
+      "description": "グアピーガエルではあなたのIPアドレス（グローバルIP）を確認することができ、さらに複数種類の方法でのAPI提供も無料で行っています！！！",
+      "url": "https://gir.pusyuuwanko.com",
+      "image": "https://gir.pusyuuwanko.com/assets/images/gir-baricon.png"
+    },
+    {
+      "title": "プシューコント",
+      "description": "プシューコントは弟が作った面白おかしいアニメです、それを楽しく紹介しています。",
+      "url": "https://p-conte.pusyuuwanko.com",
+      "image": "https://p-conte.pusyuuwanko.com/assets/images/nav-img.png"
+    },
+    {
+      "title": "効果音ダウンロード",
+      "description": "様々な効果音のダウンロードができるサイトです、個人的にはおならの効果音が好きですが、おならって何歳になても面白いものです、ぜひTikTokやYouTubeなどでお使いください。強制ではないですが、効果音をご利用の際にプシューサービスを紹介していただけると幸いです。",
+      "url": "https://sound.pusyuuwanko.com",
+      "image": "https://sound.pusyuuwanko.com/assets/images/sound-icon.png"
+    },
+    {
+      "title": "プシューページ",
+      "description": "このサービスでは、様々なプシューが気になったことや見る人の要望によるブログやプシューの部屋でプシューの事やプシューの日常が伺えるサービスで、このサービスはプシューサービスはもとよりカエルページの頃から続いてるサービスで、いわばプシューサービスの元祖です！！。",
+      "url": "https://pp.pusyuuwanko.com",
+      "image": "https://pp.pusyuuwanko.com/logo.png"
+    },
+    {
+      "title": "プシューサービス版uwuzu（仮名）",
+      "description": "MySQLを練習かつuzuzuの改良を主な目的としたサービス、あなたがこのサービスでできるのはその新機能をいち早く試し使用できることです",
+      "url": "https://uwuzu.pusyuuwanko.com",
+      "image": ""
+    },
+    {
+      "title": "このファイルは５秒後に消滅する",
+      "description": "ワンタイムファイル共有サービスです、あの例の映画の様なわくわくかんがあるかとおもいます",
+      "url": "https://p-5second.pusyuuwanko.com",
+      "image": "https://p-5second.pusyuuwanko.com/assets/images/p-5second-icon.png"
+    },
+        {
+      "title": "プシューリバーシ",
+      "description": "プシューリバーシではコンピュータ対戦は無いものオンラインを経由して離れた相手とオセロをしたい、それにアカウントを作らずにアプリもインストールしたくない、という野望を暇をつぶしたいという理由から生まれました、このアプリは今後も拡張される予定があります。",
+      "url": "https://p-reversi.pusyuuwanko.com",
+      "image": "https://p-reversi.pusyuuwanko.com/assets/images/p-reversi-icon.png"
+    },
+    {
+      "title": "プシューチャット",
+      "description": "プシューチャットは、PusyuuIPSではできないプライベートな会話を可能にします、開発者がもつ最近のチャットでの不満を解消するために作られたため、大衆にとって使いにくい場合があります。このアプリは今後も拡張される予定があります。",
+      "url": "https://p-chat.pusyuuwanko.com",
+      "image": "https://p-chat.pusyuuwanko.com/assets/images/icon512_rounded.png"
+    },
+    {
+      "title": "プシュードライブ",
+      "description": "プシュードライブは、プシューメイキィのアカウントに紐づく、あなた専用のファイル保管庫です。どのサービスにも属さないファイルを直接アップロード・閲覧・ダウンロード・削除できます。実は他のプシューの各サービスが裏側で使っている保存の仕組みそのものを、あなた自身も直接使えるようにしたサービスです。",
+      "url": "https://p-drive.pusyuuwanko.com",
+      "image": ""
+    }
+  ]
+}

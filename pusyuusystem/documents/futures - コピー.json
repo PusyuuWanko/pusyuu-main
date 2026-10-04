@@ -1,0 +1,68 @@
+{
+  "links": [
+    {
+      "title": "プシューゲートウェイ",
+      "description": "プシューサービスのホームです。",
+      "url": "https://pusyuuwanko.com",
+      "image": ""
+    },
+    {
+      "title": "PusyuuIPS",
+      "description": "PIPSはPusyuuImpressionsPostService.の略で名前通り感想を書いたり見たりして楽しむサービスで、ミニブログとしてでも、掲示板としてでも、そしてチャットとしても利用可能です！、操作感は某SNSプラットフォームのような使い心地です。",
+      "url": "https://pips.pusyuuwanko.com",
+      "image": "https://pips.pusyuuwanko.com/assets/images/pips_logo.png"
+    },
+    {
+      "title": "プシューメモとテキストエディター",
+      "description": "プシューメモとテキストエディターでは以前プシューマルチアプリに含まれていたアプリの一つを、改良し単体のメモアプリとして使えるようにしたものです。バックアップ機能が充実してかつ、WEB（ブラウザ）上で実行可能なのがこのアプリのメリットです。",
+      "url": "https://p-memo.pusyuuwanko.com",
+      "image": "https://p-memo.pusyuuwanko.com/assets/images/memo-baricon.png"
+    },
+    {
+      "title": "ツールボックス",
+      "description": "このアプリは便利な機能が沢山詰まったツールボックスで、日所生活、仕事、勉強で説明書も読まず楽にかつ簡単に使える手軽ツールがあり、それらがアプリアイコンとして表示されててスマホでもパソコンでも同じ環境で実行可能です、更になんと、このツールボックスは壁紙の変更機能はもちろん、ブラウザで実行可能で、バックグラウンド実行も可能なのです！！",
+      "url": "https://toolbox.pusyuuwanko.com",
+      "image": "https://toolbox.pusyuuwanko.com/assets/images/toolbox-baricon.png"
+    },
+    {
+      "title": "プシューページ",
+      "description": "このサービスでは、様々なプシューが気になったことや見る人の要望によるブログやプシューの部屋でプシューの事やプシューの日常が伺えるサービスで、このサービスはプシューサービスはもとよりカエルページの頃から続いてるサービスで、いわばプシューサービスの元祖です！！。",
+      "url": "https://pp.pusyuuwanko.com",
+      "image": "https://pp.pusyuuwanko.com/logo.png"
+    },
+    {
+      "title": "グアピーガエル",
+      "description": "グアピーガエルではあなたのIPアドレス（グローバルIP）を確認することができ、さらに複数種類の方法でのAPI提供も無料で行っています！！！",
+      "url": "https://gir.pusyuuwanko.com",
+      "image": "https://gir.pusyuuwanko.com/assets/images/gir-baricon.png"
+    },
+    {
+      "title": "プシューコント",
+      "description": "プシューコントは弟が作った面白おかしいアニメです、それを楽しく紹介しています。",
+      "url": "https://p-conte.pusyuuwanko.com",
+      "image": "https://p-conte.pusyuuwanko.com/assets/images/nav-img.png"
+    },
+    {
+      "title": "効果音ダウンロード",
+      "description": "様々な効果音のダウンロードができるサイトです、個人的にはおならの効果音が好きですが、おならって何歳になても面白いものです、ぜひTikTokやYouTubeなどでお使いください。強制ではないですが、効果音をご利用の際にプシューサービスを紹介していただけると幸いです。",
+      "url": "https://sound.pusyuuwanko.com",
+      "images": ""
+    },
+    {
+      "title": "プシュー検索",
+      "description": "プシュー検索では、プシューサービス内の検索から普通の検索までできてしまいます！！、ぜひブラウザのデフォルトホームページなどに設定してくださいー",
+      "url": "https://search.pusyuuwanko.com",
+      "image": ""
+    }
+  ],
+  "terms": [
+    {
+      "text": "利用規約",
+      "url": "https://pusyuuwanko.com/pusyuusystem/pages/terms/term"
+    },
+    {
+      "text": "プライバシーポリシー",
+      "url": "https://pusyuuwanko.com/pusyuusystem/pages/terms/privacypolicy"
+    }
+  ]
+}

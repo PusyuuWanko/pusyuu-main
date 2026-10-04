@@ -1,0 +1,1080 @@
+@charset "UTF-8";
+
+/*****************************************
+  *----------------------------------
+  |  ThisStyleVersion: 1.0.6      |
+  |  © 2021-2026 ISAMI ABE        |
+  |  LastUpdate: 2026-08-03       |
+  |  License: MIT License         |
+  |  main style                   |
+----------------------------------*
+******************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: senobi;
+}
+
+/*
+  header/footer/nav/sectionはHTML5で追加された要素です。古いブラウザ
+  (IE8以前など、HTML5未対応のもの)はこれらを「知らないタグ」として扱い、
+  既定のdisplayがinlineになります。インライン要素はpaddingの上下や
+  min-height/heightが効かないため、幅・高さがある前提のレイアウトが
+  丸ごと崩れます。ここでdisplay: blockを明示しておけば安心です
+  （下の header/footer で改めて display: flex を指定していますが、flexを
+  理解できないほど古いブラウザはその宣言自体を無視するため、ここで指定した
+  display: blockがそのまま生き残る、という仕組みです）。
+*/
+header,
+footer,
+nav,
+section {
+  display: block;
+}
+
+@font-face {
+  src: url("../fonts/Anders.ttf") format("truetype");
+  font-family: anders;
+}
+
+@font-face {
+  src: url("../fonts/PixelMplus12-Regular.ttf") format("truetype");
+  font-family: pixel;
+}
+
+@font-face {
+  src: url("../fonts/Senobi-Gothic-Medium.ttf") format("truetype");
+  font-family: senobi;
+}
+
+show {
+  display: block;
+  position: relative;
+  width: auto;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+show > video,
+show > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+show > video.show-video-mobile {
+  display: none;
+}
+show > #event {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 35%;
+}
+show > .comp1 {
+  position: absolute;
+  top: 70%;
+  left:10%;
+  font-family: anders;
+}
+show > .comp1 > strong {
+  font-size: 40px;
+  color: #fff;
+}
+show > .comp1 > strong > span {
+  font-size: 30px;
+  color: #00ff00;
+}
+show > .comp1 > strong > span {
+  font-size: 30px;
+  color: #00aaff;
+}
+show > .comp1 > p {
+  color: #00ff00;
+}
+show > .comp2 {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+show > .comp2 > iframe {
+  width: 500px;
+  height: 200px;
+  border-width: 0;
+  border: 1px solid rgba(0,255,0,0.4);
+  border-radius: 5px;
+}
+
+header {
+  position: fixed;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px;  
+  z-index: 1;
+}
+header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background: rgba(255,255,255,0.5);
+}
+
+nav > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav > ul > li {
+  list-style: none;
+  margin: 10px;
+}
+nav > ul > li > a {
+  color: #00ff00;
+  text-decoration: none;
+  position: relative;
+  padding: 2px 5px 2px;
+  font-family: pixel;
+}
+nav > ul > li > a:hover {
+  color: #fff;
+}
+nav > ul > li > a::before {
+  content: "";
+  transition: all 0.5s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,100,255,0.5);
+  width: 0%;
+  height: 50%;
+  z-index: -1;
+}
+nav > ul > li > a:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+
+main {
+ padding: 20px;
+ display: block;
+ background: #eeffee;
+}
+main #home a,
+main #about a {
+  color: #00aaff;
+  transition: all 0.3s;
+  text-shadow: 0px 0px #00ff00;
+}
+main #home a:hover,
+main #about a:hover {
+  text-shadow: 2px 2px #00ff00;
+  color: #ffffff;
+}
+main strong {
+  color: #ffaa00;
+}
+
+section {
+  padding: 75px 5px 5px
+}
+
+.showcase-video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+.showcase-video-wrap video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.showcase-video-wrap video.showcase-video-mobile {
+  display: none;
+}
+@media only screen and (max-width: 900px) {
+  .showcase-video-wrap video.showcase-video-desktop {
+    display: none;
+  }
+  .showcase-video-wrap video.showcase-video-mobile {
+    display: block;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+#loading {
+  position: fixed;
+  inset: 0;
+  display: block;
+  opacity: 1;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: linear-gradient(to bottom right, #00ff00, #00aaff);
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+}
+#loading > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+#loading > div > div > img {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  animation: loadAnime infinite 1.5s;
+}
+#loading > div > div > p {
+  color: #fff;
+  font-family: pixel;
+}
+#loading > div > div > p::after {
+  content: "🎍";
+  animation: dots 1.5s infinite;
+}
+@keyframes loadAnime {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes dots {
+  0% {
+    content: '';
+  }
+  20% {
+    content: '🐸';
+  }
+  40% {
+    content: '🐸🐸';
+  }
+  60% {
+    content: '🐸🐸🐸';
+  }
+  80% {
+    content: '🐸🐸';
+  }
+  100% {
+    content: '🐸';
+  }
+}
+
+.saiyou {
+  width: 100%;
+  height: 400px;
+  background-image: url("../images/js_source_code.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.saiyou:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.saiyou > a {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.zisseki {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.zisseki > article {
+  width: 30vw;
+  height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s;
+  margin: 10px;
+}
+.zisseki > article:hover {
+  transform: translateY(-5px);
+}
+.zisseki > article > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  background: #5DAC81;
+}
+.zisseki > article > a > img {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 45%;
+  object-fit: cover;
+}
+.zisseki > article > a > div {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 55%;
+  overflow-y: auto;
+  color: #FFF;
+}
+.zisseki > article > a > div > h3 {
+  color: #1B813E;
+}
+
+.center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sougo_links {
+  background: rgb(240,250,255);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.sougo_links > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding: 15px;
+  overflow-y: auto;
+}
+.sougo_links > div > .top,
+.sougo_links > div > .sougo {
+  width: 30%;
+  height: 500px;
+  padding: 20px;
+  margin: 10px;
+  word-break: break-all;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.sougo_links > div > .top {
+  background: #070;
+  color: #FFF;
+}
+.sougo_links > div > .sougo {
+  background: #000;
+  color: #00ff00;
+}
+.sougo_links > div > .sougo > h3 {
+  color: #ccff00;
+  font-size: 21px;
+}
+.sougo_links > div > .top > div,
+.sougo_links > div > .sougo > a {
+  position: absolute;
+  padding: 25px;
+  inset: 0;
+  overflow: auto;
+}
+.sougo_links > div > .sougo > a {
+  display: block;
+  text-decoration: none;
+  color: #00aaff;
+  transition: all 0.5s;
+}
+.sougo_links > div > .top > div > h3 {
+  color: #00ff00;
+}
+.sougo_links > div > .sougo > a > h3 {
+  color: #00ffff;
+}
+.sougo_links > div > .sougo > a:hover {
+  color: #fff;
+  transform: translateY(10px);
+}
+.sougo_links > div > .sougo > a > img {
+  width: 200px;
+  height: auto;
+}
+
+.product {
+   position: relative;
+   width: 20vw;
+   height: 500px;
+   overflow: auto;
+   margin: 5px;
+   overflow: hidden;
+   border-radius: 10px;
+}
+.product > a {
+  position: absolute;
+  inset: 0;
+  display: block;
+  padding: 20px;
+  background: #aaff00;
+  color: #fff;
+  transition: all 0.5s;
+  border-radius: 5px;
+  color: #000;
+  text-decoration: none;
+}
+.product > a:hover {
+  transform: scale(0.9);
+  box-shadow: 3px 3px #00ff00;
+  background: #00aaff;
+  color: #fff;
+  text-decoration: none;
+}
+.product > a > img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.product > a > div {
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  word-break: break-all;
+  position: relative;
+}
+.product > a > div > span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  background: rgba(0,225,0,0.5);
+}
+
+#notifications > div > div > span > p {
+  margin: 5px 0px 5px;
+  font-size: 15px;
+}
+
+#notifications > div > div > div > details {
+  padding: 15px;
+  background: rgba(0,0,0,0.1);
+}
+#notifications > div > div > div > ul {
+  margin: 0;
+  padding: 0;
+}
+#notifications > div > div > div > ul > li {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0px 5px;
+  border: 1px solid #00ff00;
+  word-break: break-all;
+}
+#notifications > div > div > div > ul > li > p > span::after,
+#notifications > div > div > div > ul > li > i > span::after {
+  content: "：";
+}
+#notifications > div > div > div > ul > li > time,
+#notifications > div > div > div > ul > li > i,
+#notifications > div > div > div > ul > li > p {
+  margin: 0;
+  padding: 5px;
+}
+
+#notifications > div > div > div > nav {
+  display: flex !important;
+  flex-wrap: wrap !important; 
+  align-items: center !important;
+  margin: 15px 0px 0px !important;
+}
+#notifications > div > div > div > nav > a,
+#notifications > div > div > div > nav > span {
+  display: inline-block;
+  min-width: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  border: 1px solid #00ff00;
+  border-radius: 5px;
+  color: #00ff00;
+  text-decoration: none;
+  margin: 3px;
+}
+#notifications > div > div > div > nav > a:hover {
+  background: rgba(0,255,0,0.2);
+}
+#notifications > div > div > div > nav > span.current {
+  background: #00ff00;
+  color: #000;
+}
+#notifications > div > div > div > nav > span.disabled {
+  opacity: 0.4;
+}
+
+/* モーダル設定
+---------------------------------------------*/
+
+.modal {
+  display: none;
+  z-index: 666;
+}
+.modal:target {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal > div {
+  animation: modal-show 0.3s linear 0s;
+  --modal_width: 70vw;
+  --modal_position: relative;
+}
+@keyframes modal-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal > div > a {
+  position: var(--modal_position);
+  display: block;
+}
+.modal > div > a::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.modal > div > a::after {
+  content: "✕";
+  color: white;
+  position: absolute;
+  right: -13px;
+  top: -13px;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+  border-radius: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.modal > div > div {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+.modal > div > div > span {
+  position: var(--modal_position);
+  width: var(--modal_width);
+  background: #77ff00;
+  min-height: 20px;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #00ffff;
+  color: #fff;
+  word-break: break-all;
+}
+.modal > div > div > div {
+  position: var(--modal_position);
+  width: var(--modal_width);
+  height: 60vh;
+  border-radius: 0px;
+  overflow: hidden;
+  cursor: default;
+  padding: 15px;
+  overflow: auto;
+  color: #fff;
+}
+
+.yokoori {
+  display: flex;
+  flex-wrap: wrap;
+}
+.app_link {
+  text-decoration: none;
+  color: #fff000;
+  transition: all 0.1s;
+  color: #fff000;
+  display: block;
+}
+.app_link:hover {
+  color: #fff000;
+}
+.app_link:active {
+  background-color: rgba(10,255,10,0.2);
+  color: #ffffff;
+}
+.app_box-1 {
+  height: 40px;
+  padding: 5px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+.app-name {
+  @extend .app_box-1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.app_name {
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-shadow: 1px 1px #000; 
+}
+.app_wrapper {
+  text-align: center;
+  margin: 15px;
+  width: 50px;
+  height: 80px;
+  display: inline-block;
+}
+
+#menu-btn-check,
+.menu-btn {
+  display: none;
+}
+
+/* 常時ループする環境演出(ネオン発光・レーダー回転・浮遊・走査光)
+   ------------------------------------------------------------
+   既存要素だけを対象にした純CSSアニメーションです。HTML/PHPの構造は
+   変更していません(常時稼働のためJSでの生成/監視は不要な演出のみ)。
+*/
+show > .comp1 > strong > span {
+  animation: neonPulse 2.6s ease-in-out infinite;
+}
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 0 0 4px currentColor, 0 0 10px currentColor;
+  }
+  50% {
+    text-shadow: 0 0 12px currentColor, 0 0 26px currentColor, 0 0 40px currentColor;
+  }
+}
+
+#notificationNumInfo {
+  animation: notifyPulse 1.7s ease-in-out infinite;
+}
+@keyframes notifyPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255,0,0,0.6);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px rgba(255,0,0,0);
+  }
+}
+
+show > .comp2 {
+  overflow: visible;
+}
+show > .comp2::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  z-index: -1;
+  border-radius: 8px;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(0,255,0,0.6) 40deg, transparent 100deg);
+  animation: radarSpin 3s linear infinite;
+}
+@keyframes radarSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.saiyou {
+  isolation: isolate;
+}
+.saiyou::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background: linear-gradient(100deg, transparent, rgba(0,255,150,0.35), transparent);
+  transform: translateX(-160%);
+  animation: saiyouSweep 5.5s ease-in-out infinite;
+}
+@keyframes saiyouSweep {
+  0% {
+    transform: translateX(-160%);
+  }
+  55% {
+    transform: translateX(160%);
+  }
+  100% {
+    transform: translateX(160%);
+  }
+}
+
+.product {
+  animation: cardFloat 5s ease-in-out infinite;
+}
+.product:nth-child(2n) {
+  animation-delay: -1.6s;
+}
+.product:nth-child(3n) {
+  animation-delay: -3.2s;
+}
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.zisseki > article {
+  animation: cardFloat 5.6s ease-in-out infinite;
+}
+.zisseki > article:nth-child(2n) {
+  animation-delay: -1.8s;
+}
+.zisseki > article:nth-child(3n) {
+  animation-delay: -3.6s;
+}
+.zisseki > article:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  show > .comp1 > strong > span,
+  #notificationNumInfo,
+  show > .comp2::before,
+  .saiyou::after,
+  .product,
+  .zisseki > article {
+    animation: none !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #FFF;
+    background: #000;
+  }
+  #loading {
+    background: linear-gradient(to bottom right, #00aa00, #0077aa);
+  }
+  header::before {
+    background: rgba(0,0,0,0.5);
+  }
+  main {
+    background: rgb(0,20,0);
+  }
+  .modal > div > div > span {
+    background: #55aa00;
+  }
+  .sougo_links {
+    background: rgb(0,10,20);
+  }
+  .sougo_links > div > .sougo {
+    background: #222;
+  }
+  .product > a {
+    background: #66cc00;
+  }
+  .product > a:hover {
+    box-shadow: 3px 3px #00aa00;
+    background: #0077aa;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .ads > div > .admax-ads {
+    width: 100%;
+    overflow: hidden;
+  }
+  .ads::before {
+    font-size: 15px;
+    width: 80%;
+  }
+
+  show > video.show-video-desktop {
+    display: none;
+  }
+  show > video.show-video-mobile {
+    display: block;
+  }
+
+  show > #event {
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+
+  show > .comp1 {
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+  show > .comp2 {
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+  }
+  show > .comp2 > iframe {
+    width: 100%;
+    height: 150px;
+  }
+  
+  section {
+    padding-top: 70px;
+  }
+  
+  .product {
+    width: 90%;
+  }
+  
+  .sougo_links > div > .top, 
+  .sougo_links > div > .sougo {
+    width: 90%;
+  }
+
+  .zisseki > article {
+    width: 100%;
+  }
+
+  .menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    height: 45px;
+    width: 45px;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    background-color: #00ff00;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  @keyframes menubtnAnime {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 20px;
+    border-radius: 3px;
+    background-color: #fff;
+    position: absolute;
+    transition: all 0.45s;
+  }
+  .menu-btn div {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 2px;
+    color: #fff;
+    border-radius: 3px 0 0 0;
+    font-size: 7px;
+    background: #0af;
+    z-index: -1;
+  }
+
+  .menu-btn span:before {
+    bottom: 8px;
+  }
+
+  .menu-btn span:after {
+    top: 8px;
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+    animation: menubtnAnime 1s;
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  @keyframes menucontentAnime {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  #menu-btn-check:checked ~ .menu-content {
+    bottom: 0;
+    left: 0;
+    animation: menucontentAnime 1s;
+  }
+
+  .menu-content {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    padding: 30px 0px 30px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 100%;
+    bottom: 100%;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(150,255,0,0.1);
+    border: 1px solid #fff;
+    transition: all 0.45s;
+    z-index: 10;
+  }
+
+  .menu-content > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 55;
+  }
+
+  .menu-content > div > nav {
+    display: block;
+    width: 90vw;
+  }
+
+  .menu-content > div > nav > ul {
+    display: block;
+    padding: 0;
+  }
+
+  .menu-content > div > nav > ul > li {
+    border-bottom: solid 1px #00ff00;
+    list-style: square;
+    display: flex;
+  }
+
+  .menu-content > div > nav > ul > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #000;
+    font-size: 15px;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+  }
+
+  .menu-content > div > nav > ul > li > a::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+  }
+}
