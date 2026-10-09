@@ -40,3 +40,11 @@ pusyuusystem/pages/counter/count.dat
 pusyuusystem/documents/productUsage.json
 # 問い合わせフォームの公開鍵は機密ではない配布物なので戻す
 !pusyuusystem/pages/contact/contact_public_key.php
+
+# --- 個別のリポジトリで公開している共有ライブラリ(README の「共有ライブラリ」を参照) ---
+pusyuusystem/scripts/php_scripts/meikiee_client.php
+pusyuusystem/scripts/php_scripts/panic_handler.php
+pusyuusystem/scripts/php_scripts/pusyuu_registry_client.php
+pusyuusystem/scripts/php_scripts/pusyuu_session.php
+pusyuusystem/scripts/php_scripts/rate_limiter.php
+pusyuusystem/scripts/php_scripts/usage_tracker.php

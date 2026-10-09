@@ -1,4 +1,13 @@
 <?php
+/*****************************************
+  *----------------------------------
+  |  ThisScriptVersion: 1.0.0     |
+  |  © 2026 By ISAMI ABE          |
+  |  LastUpdate: 2026-10-07       |
+  |  License: MIT License         |
+  |  notation (規約表示ライブラリ) |
+----------------------------------*
+******************************************/
 function notationDisp($whyInfo = "notation") {
   $getNotationFile = file_get_contents(__DIR__ . "/../../documents/pusyuuNotation.json");
   $result = "";
