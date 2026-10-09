@@ -48,3 +48,16 @@ pusyuusystem/scripts/php_scripts/pusyuu_registry_client.php
 pusyuusystem/scripts/php_scripts/pusyuu_session.php
 pusyuusystem/scripts/php_scripts/rate_limiter.php
 pusyuusystem/scripts/php_scripts/usage_tracker.php
+
+# --- 個別のリポジトリで公開しているAPIとスクリプト(README の「個別に公開している部品」を参照) ---
+pusyuusystem/apis/
+pusyuusystem/scripts/dragg-and-drop.js
+pusyuusystem/scripts/internet_checker.js
+pusyuusystem/scripts/notify-sound.js
+pusyuusystem/scripts/privacy_notice.js
+pusyuusystem/scripts/push-subscribe.js
+pusyuusystem/scripts/pusyuuWallpaper.js
+pusyuusystem/scripts/request-indicator.js
+pusyuusystem/scripts/touch-device-tool-tip.js
+pusyuusystem/scripts/scroll-enhance.js
+pusyuusystem/scripts/pusyuuImageEffect.js
